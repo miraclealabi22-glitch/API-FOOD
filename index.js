@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express();
 let portName = 3451
+const name = 'Miracle';
 
 const musicDetails = [
     {
@@ -93,11 +94,20 @@ const musicDetails = [
 ]
 
 
-    app.get('/music', (req, res) => {
+app.get('/',(req, res) =>{
+    res.sendFile(__dirname + '/index.html')
+})
+    
+
+
+app.get('/music', (req, res) => {
         res.send(musicDetails)
         // console.log(musicDetails);
         
     } )
+    app.get('/about',(req, res) => {
+        res.render("index.ejs",{name: name})
+    })
 app.listen(portName, () => {
     console.log(`i am working on${portName}`);
     
