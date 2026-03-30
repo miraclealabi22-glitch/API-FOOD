@@ -1,7 +1,12 @@
 const express = require('express')
-const app = express();
+const app = express()
 let portName = 3451
 const name = 'Miracle';
+// const express = require('express')
+const cors = require('cors')
+// const app = express();
+
+app.use(cors()); // This ena
 
 const musicDetails = [
     {
