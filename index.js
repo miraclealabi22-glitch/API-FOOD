@@ -7,6 +7,9 @@ const cors = require('cors')
 // const app = express();
 
 app.use(cors()); // This ena
+app.use(cors ({
+    origin: 'http://localhost:5173',
+}))
 
 const musicDetails = [
     {
